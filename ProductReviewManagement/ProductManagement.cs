@@ -8,15 +8,16 @@ namespace ProductReviewManagement
 {
     public class ProductManagement
     {
-        public static void RetrieveCountofRecords(List<ProductReview> productReviewList)
+        public static void RetrieveOnlyProductIdAndReview(List<ProductReview> productReviewList)
         {
-            var recorddata = productReviewList.GroupBy(x => x.ProductID).Select(x => new { ProductID = x.Key, count = x.Count() });
-
-            foreach (var list in recorddata)
+            var productData = (from productReviews in productReviewList orderby productReviews.ProductID select productReviews);
+           
+            foreach (var list in productData)
             {
-                Console.WriteLine(list.ProductID + "--------" + list.count);
-
+                Console.WriteLine("\nProduct ID: " + list.ProductID +
+                                    "\nReview : " + list.Review);
             }
+
         }
     }
 }
