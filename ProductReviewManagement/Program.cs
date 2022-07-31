@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 
 namespace ProductReviewManagement
 {
@@ -43,8 +44,11 @@ namespace ProductReviewManagement
             //    Console.WriteLine("ProductId:" + list.ProductID + " " + "UserID:" + list.UserID + " " + "Rating:" + list.Rating + " " + "Review:" + list.Review + " " + "isLike:" + list.isLike);
             //}
 
-            Console.WriteLine("Retrieve product ID and Review:");
-            ProductManagement.RetrieveOnlyProductIdAndReview(productreview);
+            ProductManagement.CreateDatatables();
+
+            
+        
+        
         }
     }
 }
