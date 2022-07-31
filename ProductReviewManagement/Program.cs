@@ -37,17 +37,22 @@ namespace ProductReviewManagement
                 new ProductReview() { ProductID = 22, UserID = 5, Rating = 5, Review = "Good", isLike = true },
                 new ProductReview() { ProductID = 24, UserID = 6, Rating = 5, Review = "Good", isLike = false },
             };
-            
+
             foreach (var list in productreview)
             {
                 Console.WriteLine("ProductId:" + list.ProductID + " " + "UserID:" + list.UserID + " " + "Rating:" + list.Rating + " " + "Review:" + list.Review + " " + "isLike:" + list.isLike);
             }
+
+            Console.WriteLine("---------------------------");
+            //Gives Top 3 Records whose ratings are higher
+            Console.WriteLine("Records which are having higher ratings are- ");
+            ProductManagement.TopThreeRecords(productreview);
         }
     }
 }
 
-       
-            
-        
-    
+
+
+
+
 
