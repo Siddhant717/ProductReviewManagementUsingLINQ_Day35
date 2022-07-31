@@ -43,9 +43,8 @@ namespace ProductReviewManagement
             //    Console.WriteLine("ProductId:" + list.ProductID + " " + "UserID:" + list.UserID + " " + "Rating:" + list.Rating + " " + "Review:" + list.Review + " " + "isLike:" + list.isLike);
             //}
 
-          
-            Console.WriteLine("Records whose ratings are greater then 3 and product Id is 1 or 4 or 9 are- ");
-            ProductManagement.GreaterThanThreeRecords(productreview);
+
+            ProductManagement.RetrieveCountofRecords(productreview);
         }
     }
 }

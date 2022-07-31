@@ -8,21 +8,18 @@ namespace ProductReviewManagement
 {
     public class ProductManagement
     {
-        public static void GreaterThanThreeRecords(List<ProductReview> productreviewlist)
+        public static void RetrieveCountofRecords(List<ProductReview> productReviewList)
         {
-            var productData = (from productReviews in productreviewlist
-                               where (productReviews.ProductID == 1 || productReviews.ProductID == 4 || productReviews.ProductID == 9)
-                               && productReviews.Rating > 3
-                               select productReviews);
+            var recorddata = productReviewList.GroupBy(x => x.ProductID).Select(x => new { ProductID = x.Key, count = x.Count() });
 
-            foreach (var list in productData)
+            foreach (var list in recorddata)
             {
-                Console.WriteLine("ProductID:- " + list.ProductID + " " + "UserID:- " + list.UserID
-                     + " " + "Rating:- " + list.Rating + " " + "Review:- " + list.Review + " " + "IsLike:- " + list.isLike);
+                Console.WriteLine(list.ProductID + "--------" + list.count);
+
             }
         }
-
-
-
     }
 }
+
+    
+
