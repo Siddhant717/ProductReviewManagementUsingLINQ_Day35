@@ -43,8 +43,8 @@ namespace ProductReviewManagement
             //    Console.WriteLine("ProductId:" + list.ProductID + " " + "UserID:" + list.UserID + " " + "Rating:" + list.Rating + " " + "Review:" + list.Review + " " + "isLike:" + list.isLike);
             //}
 
-            Console.WriteLine("Retrieve only Product Id and Review :");
-            ProductManagement.RetrieveOnlyProductIdAndReview(productreview);
+            Console.WriteLine("Skipped top 5 records and showing remaining data");
+            ProductManagement.SkipTop5Records(productreview);
         }
     }
 }
